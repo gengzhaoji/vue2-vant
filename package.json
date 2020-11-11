@@ -1,0 +1,40 @@
+{
+  "name": "vue3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run start",
+    "start": "npm run serve -- --open",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "coder": "node coder/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "commander": "^4.1.1",
+    "core-js": "^2.6.5",
+    "fastclick": "^1.0.6",
+    "js-beautify": "^1.10.3",
+    "lib-flexible": "^0.3.2",
+    "lodash": "^4.17.15",
+    "nprogress": "^0.2.0",
+    "path-to-regexp": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "vant": "^2.5.3",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vue-scroller": "^2.2.4",
+    "vuex": "^3.0.1",
+    "vuex-persist": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "babel-plugin-import": "^1.13.0",
+    "node-sass": "^4.13.1",
+    "postcss-pxtorem": "^5.0.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
