@@ -1,7 +1,7 @@
 const statiConfig = window.__config__ || {};
 
-export const baseUrl = statiConfig['baseUrl'] || 'http://68.56.0.250:8081';
-export const user = statiConfig['user'] || [{
-  name: 'admin',
-  password: 'admin'
-}];
+// 默认请求前缀
+export const API_HOST = statiConfig['API_HOST'] || '';
+
+// 请求响应成功code
+export const AJAX_SUCCESS = statiConfig['AJAX_SUCCESS']  || 200

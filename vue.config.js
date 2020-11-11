@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   // 基本路径
   publicPath: '/',
@@ -37,6 +39,10 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-    // ...
+    // 自动引入样式插件
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [path.resolve(__dirname, 'src/style/index.scss')]
+    }
   }
 }
