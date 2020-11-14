@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 import {
-    Col, Row, Field, Tag, Button, RadioGroup, Radio, Loading, Overlay, Cell, CellGroup
+    Lazyload, Swipe, SwipeItem, Col, Row, Field, Tag, Button, RadioGroup, Radio, Loading, Overlay, Cell, CellGroup, Collapse, CollapseItem, Icon
 } from 'vant'
 
 Vue.use(Col);
@@ -15,5 +15,13 @@ Vue.use(Loading);
 Vue.use(Overlay);
 Vue.use(Cell);
 Vue.use(CellGroup);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+Vue.use(Icon);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(Lazyload, {
+    lazyComponent: true
+});
 
 export default Vue

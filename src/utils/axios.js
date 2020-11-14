@@ -40,12 +40,6 @@ const config = {
 
 const service = axios.create(config)
 
-// axios.interceptors.response.use(function (response) {
-//   return response
-// }, function (error) {
-//   return Promise.reject(error)
-// })
-
 /**
  * Axios 实例
  * @example

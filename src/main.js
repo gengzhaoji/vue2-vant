@@ -15,9 +15,6 @@ import 'vant/lib/index.css'
 //公用组件
 import './helper/commonPage'
 
-// 全局http请求拦截
-import './helper/interceptor'
-
 // 根组件
 import App from './App.vue'
 
@@ -39,20 +36,12 @@ fastclick.attach(document.body)
 // 注入路由守卫
 import guarder from './helper/guarder'
 
-// 引入插件
-import plugin from './utils/plugin'
-
-//使用混入属性
-import Mixin from './helper/mixins'
+import mixin from './helper/mixin'
 
 // 注册路由守卫
 guarder(router)
 
-// 使用混入属性
-Vue.mixin(Mixin)
-
-// 使用自定义功能插件
-Vue.use(plugin)
+Vue.mixin(mixin)
 
 Vue.config.productionTip = false
 

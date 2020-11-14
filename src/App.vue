@@ -1,43 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      测试页面
-      <van-button type="default">默认按钮</van-button>
-      <van-button type="primary">主要按钮</van-button>
-      <van-button type="info">信息按钮</van-button>
-      <van-button type="warning">警告按钮</van-button>
-      <van-button type="danger">危险按钮</van-button>
-    </div>
-    <router-view />
+    <transition :name="$store.state.states">
+      <router-view
+        v-if="!$route.meta.keepAlive"
+        :key="$route.fullPath"
+      ></router-view>
+    </transition>
+    <transition :name="$store.state.states">
+      <keep-alive>
+        <router-view
+          v-if="$route.meta.keepAlive"
+          :key="$route.fullPath"
+        ></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 <script>
 export default {
-  methods: {
-
-  },
+  name: "App",
   mounted() {
-    // this.$myMethod('测试数据2')
+    var _this = this;
+    window.addEventListener(
+      "popstate",
+      function (e) {
+        _this.$store.commit("setTransition", "turn-off");
+      },
+      false
+    );
   }
 };
 </script>
 <style lang="scss">
-@import "assets/style/common.scss";
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: $bkc;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.turn-on-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.turn-on-enter-active,
+.turn-on-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+.turn-off-enter-active,
+.turn-off-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-leave-active {
+  z-index: 2;
 }
 </style>

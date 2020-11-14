@@ -1,6 +1,8 @@
+const path = require('path')
+
 module.exports = {
   // 基本路径
-  publicPath: '/',
+  publicPath: './',
   // 输出文件目录
   outputDir: 'dist',
   // eslint-loader 是否在保存的时候检查
@@ -20,13 +22,12 @@ module.exports = {
     // 启用 CSS modules for all css / pre-processor files.
     modules: false
   },
+  configureWebpack: {
+    name: 'vue3项目'
+  },
   // webpack-dev-server 相关配置
   devServer: {
-    open: process.platform === 'darwin',
-    host: '0.0.0.0',
     port: 5000,
-    https: false,
-    hotOnly: false,
     // proxy: {// 设置代理
     //   '/api': {
     //     target: 'http://127.0.0.1:3000/',
@@ -37,6 +38,9 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-    // ...
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [path.resolve(__dirname, './src/style/common.scss')]
+    }
   }
 }

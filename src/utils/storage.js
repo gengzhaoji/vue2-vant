@@ -1,7 +1,7 @@
 /**
  * 缓存操作模块，提供sessionStorage和localStorage操作
  * @module utils/storage
- * @author 陈华春
+ * @author 耿朝继
  */
 
 /**
