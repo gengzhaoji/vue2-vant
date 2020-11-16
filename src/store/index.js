@@ -11,10 +11,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    states: 'turn-on',
+    radio: '1'
   },
   mutations: {
-
+    setTransition(state, states) {
+      state.states = states
+    },
+    radio(state, states) {
+      state.radio = states
+    }
   },
   actions: {
 

@@ -10,7 +10,6 @@ import 'babel-polyfill'
 
 // 按需加载ui
 import './helper/ui'
-import 'vant/lib/index.css'
 
 //公用组件
 import './helper/commonPage'
@@ -36,19 +35,14 @@ fastclick.attach(document.body)
 // 注入路由守卫
 import guarder from './helper/guarder'
 
-// 引入插件
-import plugin from './utils/plugin'
+import mixin from './helper/mixin'
 
 // 注册路由守卫
 guarder(router)
 
-// 使用自定义功能插件
-Vue.use(plugin)
-
-Vue.config.productionTip = false
-
+Vue.mixin(mixin)
 new Vue({
-  router,
   store,
+  router,
   render: h => h(App)
 }).$mount('#app')

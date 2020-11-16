@@ -19,4 +19,3 @@ const router = new Router({
 console.log(router)
 
 export default router
-

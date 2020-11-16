@@ -32,7 +32,6 @@ export const source = axios.CancelToken.source()
  * @property {number} timeout 超时时间，默认：0， 不限制
  * @property {boolean} withCredentials 是否带上验证信息， 默认：true
  * @property {number} maxContentLength 限制最大发送内容长度，默认：-1 不限制
- * @property {strin} cancelToken 取消请求
  */
 const config = {
   headers: {
@@ -42,7 +41,6 @@ const config = {
   withCredentials: true,
   responseType: 'json',
   maxContentLength: -1,
-  cancelToken: source.token,
   baseURL: API_HOST
 }
 
@@ -60,14 +58,12 @@ service.interceptors.request.use(config => {
   return config;
 },
   error => {
-    Toast.fail({
-      message: '加载超时'
-    })
+    Toast.fail('加载超时')
     return Promise.error(error);
   }
 )
 
-// 响应拦截器
+// 响应拦截器 200-300为成功逻辑
 service.interceptors.response.use(
   res => {
     if (res.status === AJAX_SUCCESS) {
@@ -94,9 +90,7 @@ service.interceptors.response.use(
         // 清除本地token和清空vuex中token对象                
         // 跳转登录页面                
         case 403:
-          Toast.fail({
-            message: '登录过期，请重新登录'
-          });
+          Toast.fail('登录过期，请重新登录')
           // // 清除token                    
           // localStorage.removeItem('token');
           // store.commit('loginSuccess', null);
@@ -112,57 +106,31 @@ service.interceptors.response.use(
           break;
         // 404请求不存在                
         case 404:
-          Toast.fail({
-            message: '网络请求不存在'
-          });
+          Toast.fail('网络请求不存在')
           break;
         // 其他错误，直接抛出错误提示                
         default:
-          Toast.fail({
-            message: error.response.data.message
-          });
+          Toast.fail(error.response.data.message)
       }
       return Promise.reject(error.response);
     }
   }
 );
-
-
 /**
- * Axios 实例
- * @example
- *
- *  // 基础用法
- *  import axios from '@/utils/axios'
- *  axios({
- *    method: 'post',
- *    url: '/user/123',
- *    data: {
- *      firstName: 'Fred',
- *      lastName: 'Flintstone'
- *    }
- *  })
- *
- *  @example
- *
- *  // 实例方法
- *  axios.request(config)
- *  axios.get(url[, config])
- *  axios.delete(url[, config])
- *  axios.head(url[, config])
- *  axios.options(url[, config])
- *  axios.post(url[, data[, config]])
- *  axios.put(url[, data[, config]])
- *  axios.patch(url[, data[, config]])
+ * 
+ * @param {object} options 
+ * 请求配置参数
+ * url请求地址必须传
+ * method请求方法默认为get方法
+ * data请求参数
  */
-
 export default function (options) {
   // 处理默认参数，传参和默认参数合并
   let config = Object.assign({ method: 'get' }, options || {})
 
   // 必须要传入url
   if (!config.url) {
-    throw new Error('ajax url is required!')
+    throw new Error('axios url is required!')
   }
 
   let { url, method, data } = config
