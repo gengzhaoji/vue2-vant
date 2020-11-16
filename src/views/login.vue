@@ -26,31 +26,34 @@
         src="../assets/logo.png"
         alt=""
       >
-      <p><span>云</span><span>搜</span></p>
+      <p>
+        <span>云</span>
+        <span>搜</span>
+      </p>
     </div>
-    <div class="button">
-      人脸识别登录
-    </div>
+    <div class="button">人脸识别登录</div>
   </div>
 </template>
  
 <script>
 export default {
-  name: 'login',
+  name: "login",
   data() {
-    return {
-    }
+    return {};
   },
-  components: { // 组件
+  components: {
+    // 组件
   },
-  methods: { // 函数
+  methods: {
+    // 函数
   },
-  mounted() { // 初始化函数
+  mounted() {
+    // 初始化函数
   }
-}
+};
 </script>
  
-<style scoped lang = "scss">
+<style scoped lang="scss">
 .login {
   background-color: rgb(0, 37, 141);
   width: 100%;

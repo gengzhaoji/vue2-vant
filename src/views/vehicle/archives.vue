@@ -6,8 +6,7 @@
         style="width: 100%;position: absolute;"
         alt=""
       >
-      <div class="title">
-        车辆档案
+      <div class="title">车辆档案
         <div class="back">
           <img
             src="../../assets/back.png"
@@ -39,7 +38,10 @@
         >
           <div class="right">
             <h3>粤AW9878</h3>
-            <p class="p2"><span>归属地：广东茂名</span> <span>车辆颜色：白色</span></p>
+            <p class="p2">
+              <span>归属地：广东茂名</span>
+              <span>车辆颜色：白色</span>
+            </p>
             <p class="p3">
               <van-tag
                 round
@@ -56,9 +58,7 @@
     </div>
     <div class="content">
       <div class="jiben">
-        <span class="xinxi">
-          基本信息
-        </span>
+        <span class="xinxi">基本信息</span>
         <van-row
           v-for="(item,index) in items"
           :key="index"
@@ -92,9 +92,7 @@
               <span style="float: right;color:grey">（4条记录）</span>
             </div>
             <div class="text">
-              <span class="xinxi">
-                卡口信息
-              </span>
+              <span class="xinxi">卡口信息</span>
               <van-row
                 v-for="item in 3"
                 :key="item"
@@ -111,7 +109,8 @@
                   <div style="width: 100%;">
                     <p class="ellipsis c7">广东省广州市白云区</p>
                     <p class="ellipsis">
-                      <span class="grey">卡口区域：</span><span>厚街道</span>
+                      <span class="grey">卡口区域：</span>
+                      <span>厚街道</span>
                       <span class="fr">
                         <span class="grey">过车时间：</span>04月01日
                       </span>
@@ -123,7 +122,6 @@
           </van-collapse-item>
         </van-collapse>
       </div>
-
       <!--车辆档案页面2部分-->
       <div class="kakou kakou2">
         <van-collapse
@@ -144,9 +142,7 @@
               <span style="float: right;color:grey">（4条记录）</span>
             </div>
             <div class="text">
-              <span class="xinxi">
-                违章记录
-              </span>
+              <span class="xinxi">违章记录</span>
               <van-row
                 v-for="item in 3"
                 :key="item"
@@ -170,13 +166,15 @@
                   class="right"
                 >
                   <div style="width: 100%;">
-                    <p class="ellipsis c7">广东省广州市白云区
+                    <p class="ellipsis c7">
+                      广东省广州市白云区
                       <span class="fr">
                         <span class="grey ellipsis">04月01日</span>
                       </span>
                     </p>
                     <p>
-                      <span class="grey ellipsis">违章情况：</span><span>厚街道</span>
+                      <span class="grey ellipsis">违章情况：</span>
+                      <span>厚街道</span>
                     </p>
                   </div>
                 </van-col>
@@ -191,46 +189,58 @@
  
 <script>
 export default {
-  name: 'archives',
+  name: "archives",
   data() {
     return {
-      items: [{
-        name: "类型：",
-        value: "小型轿车"
-      }, {
-        name: "登记时间：",
-        value: "1998-09-03"
-      }, {
-        name: "所有人：",
-        value: "张师傅"
-      }, {
-        name: "身份证：",
-        value: "446321190890909090"
-      }, {
-        name: "手机号码：",
-        value: "137909090000"
-      }, {
-        name: "户籍地：",
-        value: "广东省广州市白云区人民东路南建业大厦9层302"
-      }],
+      items: [
+        {
+          name: "类型：",
+          value: "小型轿车"
+        },
+        {
+          name: "登记时间：",
+          value: "1998-09-03"
+        },
+        {
+          name: "所有人：",
+          value: "张师傅"
+        },
+        {
+          name: "身份证：",
+          value: "446321190890909090"
+        },
+        {
+          name: "手机号码：",
+          value: "137909090000"
+        },
+        {
+          name: "户籍地：",
+          value: "广东省广州市白云区人民东路南建业大厦9层302"
+        }
+      ],
       kakou_index: 0,
       kakou2_index: 0
-    }
+    };
   },
-  components: { // 组件
+  components: {
+    // 组件
   },
-  methods: { // 函数
+  methods: {
+    // 函数
   },
-  mounted() { // 初始化函数
+  mounted() {
+    // 初始化函数
   },
-  watch: { // 观察属性
+  watch: {
+    // 观察属性
   },
-  computed: { // 计算属性
-  },
-}
+  computed: {
+    // 计算属性
+  }
+};
 </script>
- 
-<style scoped lang = "scss">
+
+<style scoped lang="scss">
 .archives {
   width: 100%;
   height: 100%;

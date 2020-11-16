@@ -6,8 +6,7 @@
         style="width: 100%;position: absolute;"
         alt=""
       >
-      <div class="title">
-        人员档案
+      <div class="title">人员档案
         <div class="back">
           <img
             src="../../assets/back.png"
@@ -44,11 +43,20 @@
             </div>
             <p class="p2">610426199312163539</p>
             <div class="p3">
-              <div> <span class="name">民<span class="tra">空</span>族</span>：汉</div>
-              <div> <span class="name">年<span class="tra">空</span>龄</span>：38</div>
+              <div>
+                <span class="name">民
+                  <span class="tra">空</span>族
+                </span>：汉
+              </div>
+              <div>
+                <span class="name">年
+                  <span class="tra">空</span>龄
+                </span>：38
+              </div>
             </div>
             <div class="p4 ellipsis">
-              <span class="name">现住地</span><span>：广西东兴市人民西路广信大楼12层</span>
+              <span class="name">现住地</span>
+              <span>：广西东兴市人民西路广信大楼12层</span>
             </div>
             <p class="p5">
               <van-tag
@@ -67,9 +75,7 @@
     <div class="content">
       <!--基本信息-->
       <div class="jiben">
-        <span class="xinxi">
-          基本信息
-        </span>
+        <span class="xinxi">基本信息</span>
         <div class="bff">
           <van-row
             v-for="(item,index) in items"
@@ -86,12 +92,9 @@
           </van-row>
         </div>
       </div>
-
       <!--通讯号码-->
       <div class="tongxun">
-        <span class="xinxi">
-          通讯号码
-        </span>
+        <span class="xinxi">通讯号码</span>
         <div class="bff">
           <van-row>
             <van-col
@@ -121,12 +124,9 @@
           </van-row>
         </div>
       </div>
-
       <!--个人证件-->
       <div class="zhengjian">
-        <span class="xinxi">
-          个人证件
-        </span>
+        <span class="xinxi">个人证件</span>
         <div class="bff">
           <van-row>
             <van-col span="12">
@@ -190,12 +190,9 @@
           </van-row>
         </div>
       </div>
-
       <!--交通工具-->
       <div class="jiaotong jiben">
-        <span class="xinxi">
-          交通工具
-        </span>
+        <span class="xinxi">交通工具</span>
         <div class="bff">
           <van-row>
             <van-col span="3">序号</van-col>
@@ -214,12 +211,9 @@
           </van-row>
         </div>
       </div>
-
       <!--地址信息-->
       <div class="dizhi jiben">
-        <span class="xinxi">
-          地址信息
-        </span>
+        <span class="xinxi">地址信息</span>
         <div class="bff">
           <van-row>
             <van-col span="3">序号</van-col>
@@ -242,42 +236,36 @@
           </van-row>
         </div>
       </div>
-
       <!--案件相关-->
       <div class="anjian jiben">
-        <span class="xinxi">
-          案件相关
-        </span>
+        <span class="xinxi">案件相关</span>
         <div class="bff">
           <van-row
-            v-for="item in 2"
-            :key="item"
+            v-for="(item, index) in 2"
+            :key="index"
           >
-            <div class="title">AADASDSSDFSDFASFSAFSD <span>-刑事案件</span></div>
-            <div class="text">
-              2014年抢劫他人财物等尽快交三方方式发散哈市飞洒ski诶富士康。
+            <div class="title">AADASDSSDFSDFASFSAFSD
+              <span>-刑事案件</span>
             </div>
+            <div class="text">2014年抢劫他人财物等尽快交三方方式发散哈市飞洒ski诶富士康。</div>
           </van-row>
         </div>
       </div>
-
       <!--亲密度-->
       <van-swipe>
         <van-swipe-item
-          v-for="itm in 2"
-          :key="item"
+          v-for="(item, index) in 2"
+          :key="index"
         >
           <!--亲密度-->
           <div class="qinmi">
-            <span class="xinxi">
-              亲密度
-            </span>
+            <span class="xinxi">亲密度</span>
             <div class="bff">
               <!--数据循环-->
               <div
                 class="xunhuan"
-                v-for="itm in 2"
-                :key="item"
+                v-for="(item2, index2) in 2"
+                :key="index2"
               >
                 <div class="qinmi_head">
                   <van-row
@@ -316,19 +304,34 @@
                               name="like"
                               color="#fff"
                               style="margin-right:.3em"
-                            />亲密度95%</van-tag>
+                            />亲密度95%
+                          </van-tag>
                         </div>
                         <p class="p2">610426199312163539</p>
                         <div class="p3">
-                          <div> <span class="name">民<span class="tra">空</span><span class="tra">空</span>族</span>：汉</div>
-                          <div> <span class="name">年<span class="tra">空</span>龄</span>：38</div>
+                          <div>
+                            <span class="name">民
+                              <span class="tra">空</span>
+                              <span class="tra">空</span>族
+                            </span>：汉
+                          </div>
+                          <div>
+                            <span class="name">年
+                              <span class="tra">空</span>龄
+                            </span>：38
+                          </div>
                         </div>
                         <div class="p3">
-                          <div> <span class="name">婚姻状况</span>：离婚</div>
-                          <div> <span class="name">户籍地</span>：38</div>
+                          <div>
+                            <span class="name">婚姻状况</span>：离婚
+                          </div>
+                          <div>
+                            <span class="name">户籍地</span>：38
+                          </div>
                         </div>
                         <div class="p4 ellipsis">
-                          <span class="name">现住地</span><span>：广西东兴市人民西路广信大楼12层</span>
+                          <span class="name">现住地</span>
+                          <span>：广西东兴市人民西路广信大楼12层</span>
                         </div>
                       </div>
                     </van-col>
@@ -377,9 +380,7 @@
               <span style="float: right;color:rgba(128, 128, 128, 0.3)">（4条记录）</span>
             </div>
             <div class="text">
-              <span class="xinxi">
-                轨迹信息
-              </span>
+              <span class="xinxi">轨迹信息</span>
               <van-row
                 v-for="item in 3"
                 :key="item"
@@ -404,13 +405,15 @@
                   class="right"
                 >
                   <div style="width: 100%;">
-                    <p class="ellipsis c7">广东省广州市白云区
+                    <p class="ellipsis c7">
+                      广东省广州市白云区
                       <span class="fr">
                         <span class="rgba(128, 128, 128, 0.3) ellipsis">04月01日</span>
                       </span>
                     </p>
                     <p>
-                      <span class="rgba(128, 128, 128, 0.3) ellipsis">违章情况：</span><span>厚街道</span>
+                      <span class="rgba(128, 128, 128, 0.3) ellipsis">违章情况：</span>
+                      <span>厚街道</span>
                     </p>
                   </div>
                 </van-col>
@@ -425,50 +428,69 @@
  
 <script>
 export default {
-  name: 'archives',
+  name: "people_archives",
   data() {
     return {
-      items: [{
-        name: "户籍：",
-        value: "广东省广州市白云区人民东路南建业大厦9层302"
-      }, {
-        name: "出生日期：",
-        value: "1998-09-03"
-      }, {
-        name: "出生地：",
-        value: "广东省广州市白云区人民东路南建业大厦9层302"
-      }, {
-        name: "联系电话：",
-        value: "137909090000"
-      }, {
-        name: "服务处所：",
-        value: "服务"
-      }],
+      items: [
+        {
+          name: "户籍：",
+          value: "广东省广州市白云区人民东路南建业大厦9层302"
+        },
+        {
+          name: "出生日期：",
+          value: "1998-09-03"
+        },
+        {
+          name: "出生地：",
+          value: "广东省广州市白云区人民东路南建业大厦9层302"
+        },
+        {
+          name: "联系电话：",
+          value: "137909090000"
+        },
+        {
+          name: "服务处所：",
+          value: "服务"
+        }
+      ],
       kakou_index: 0,
       kakou2_index: 0
-    }
+    };
   },
-  components: { // 组件
+  components: {
+    // 组件
   },
-  methods: { // 函数
+  methods: {
+    // 函数
   },
-  mounted() { // 初始化函数
+  mounted() {
+    // 初始化函数
   },
-  watch: { // 观察属性
+  watch: {
+    // 观察属性
   },
-  computed: { // 计算属性
+  computed: {
+    // 计算属性
   },
   filters: {
     icon: function (data) {
       switch (data) {
-        case 1: return require('../../assets/jiudian.png'); break;
-        case 2: return require('../../assets/wangba.png'); break;
-        case 3: return require('../../assets/feiji.png'); break;
-        case 4: return require('../../assets/huoche.png'); break;
+        case 1:
+          return require("../../assets/jiudian.png");
+          break;
+        case 2:
+          return require("../../assets/wangba.png");
+          break;
+        case 3:
+          return require("../../assets/feiji.png");
+          break;
+        case 4:
+          return require("../../assets/huoche.png");
+          break;
       }
     }
   }
-}
+};
 </script>
  
 <style scoped lang = "scss">
@@ -614,7 +636,7 @@ export default {
           width: 46px;
         }
         .name {
-          color: rgba(128, 128, 128, 1);
+          color: rgb(128, 128, 128);
           margin-bottom: 10px;
         }
       }

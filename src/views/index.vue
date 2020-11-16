@@ -17,7 +17,7 @@
     <div class="sou">
       <div class="row">
         <van-field
-          v-model="value"
+          v-model="name"
           placeholder="请输入关键字"
         >
           <img
@@ -126,7 +126,7 @@ export default {
   data() {
     return {
       radio: this.$store.state.radio,
-      value: ""
+      name: ""
     };
   },
   methods: {
@@ -136,19 +136,25 @@ export default {
     query() {
       this.onFn();
       if (this.radio == 1) {
-        this.$router.push({ path: "/people/information" });
+        this.$router.push({
+          path: "/people/information",
+          query: { name: this.name }
+        });
         this.$store.commit("radio", "1");
       } else {
-        this.$router.push({ path: "/vehicle/information" });
+        this.$router.push({
+          path: "/vehicle/information",
+          query: { name: this.name }
+        });
         this.$store.commit("radio", "2");
       }
     }
   },
-  mounted() { }
+  mounted() {}
 };
 </script>
  
-<style scoped lang = "scss">
+<style scoped lang="scss">
 .index {
   width: 100%;
   height: 100%;

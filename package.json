@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "coder": "node coder/index.js",
     "dev": "npm run start",
+    "fix": "node build/fix.js",
     "start": "npm run serve -- --open"
   },
   "dependencies": {
