@@ -29,7 +29,7 @@ module.exports = {
     modules: false
   },
   chainWebpack: c => {
-    config.resolve.alias
+    c.resolve.alias
       .set('@', resolve('src'))
       .set('@api', resolve('src/api'))
       .set('@com', resolve('src/components'))
