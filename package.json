@@ -5,10 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "coder": "node coder/index.js",
     "dev": "npm run start",
     "fix": "node build/fix.js",
-    "start": "npm run serve -- --open"
+    "start": "npm run serve -- --open",
+    "dev:feng": "vue-cli-service serve --mode feng --open",
+    "dev:jia": "vue-cli-service serve --mode jia --open"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -24,11 +25,13 @@
     "vue-router": "^3.0.3",
     "vue-scroller": "^2.2.4",
     "vuex": "^3.0.1",
-    "vuex-persist": "^2.2.0"
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
+    "compression-webpack-plugin": "5.0.1",
+    "image-webpack-loader": "^7.0.1",
     "babel-plugin-import": "^1.13.0",
     "node-sass": "^4.13.1",
     "postcss-pxtorem": "^5.0.0",

@@ -5,6 +5,7 @@
  */
 
 import Vue from 'vue'
+
 // ie浏览器兼容问题处理
 import 'babel-polyfill'
 

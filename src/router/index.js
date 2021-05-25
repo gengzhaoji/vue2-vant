@@ -12,10 +12,9 @@ Vue.use(Router)
 import RouteGenerator from 'gz-vue-router'
 
 const router = new Router({
-    routes: [
-        ...new RouteGenerator(require.context('../views', true, /\.vue$/)).generate()
-    ]
+    routes: []
 })
-console.log(router)
+
+router.addRoutes(new RouteGenerator(require.context('../views', true, /\.vue$/)).generate());
 
 export default router

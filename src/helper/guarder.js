@@ -3,13 +3,21 @@
  * @function
  * @param {VueRouter} router 路由实例
  */
-
-import NProgress from 'nprogress'
-import { source } from '@/utils/axios'
 // vuex数据
 import store from '@/store'
-// 进度自动递增20%
-NProgress.inc(0.2)
+
+// 获取取消正在执行的函数逻辑
+import { cancelFn } from '@utils/axios'
+
+//进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+NProgress.configure({ showSpinner: false })
+
+/**
+ * 白名单
+ */
+const whiteList = ['/login']
 
 export default function (router) {
   /**
@@ -17,15 +25,20 @@ export default function (router) {
    */
   router.beforeEach((to, from, next) => {
     NProgress.start();
-    source.cancel('页面跳转是取消所有请求');
-    if (to.path !== '/login') {
-      // next({
-      //   path: '/login'
-      // })
-      next()
+    cancelFn();
+    /** 已经登录了存在token */
+    if (store.getters.token) {
+      next();
+      NProgress.done();
     } else {
-      if (to.meta && to.meta.name) document.title = to.meta.name;
-      next()
+      // 没有token
+      if (whiteList.includes(to.path)) {
+        // 在免登录白名单，直接进入
+        next()
+      } else {
+        next(`/login?redirect=${to.fullPath}`) // 否则全部重定向到登录页
+        NProgress.done()
+      }
     }
   });
 
