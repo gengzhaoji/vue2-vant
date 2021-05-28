@@ -1,7 +1,7 @@
 /**
  * 文件下载模块
  * @module utils/download
- * @author 陈华春
+ * @author 耿朝继
  */
 
 /**

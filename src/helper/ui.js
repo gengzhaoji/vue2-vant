@@ -1,9 +1,10 @@
 import Vue from 'vue'
 
 import {
-    Lazyload, Swipe, SwipeItem, Col, Row, Field, Tag, Button, RadioGroup, Radio, Loading, Overlay, Cell, CellGroup, Collapse, CollapseItem, Icon
+    Notify, NavBar, Lazyload, Swipe, SwipeItem, Col, Row, Field, Tag, Button, RadioGroup, Radio, Loading, Overlay, Cell, CellGroup, Collapse, CollapseItem, Icon
 } from 'vant'
-
+Vue.use(Notify);
+Vue.use(NavBar);
 Vue.use(Col);
 Vue.use(Row);
 Vue.use(Field);

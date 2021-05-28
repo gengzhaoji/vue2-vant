@@ -1,14 +1,12 @@
 <template>
   <div class="index">
-    <div class="title">崇左警务大数据云平台
-      <div class="back">
-        <img
-          src="../assets/back.png"
-          alt="返回"
-          @click="offFn({ path: '/login'})"
-        >
-      </div>
-    </div>
+    <van-nav-bar
+      title="崇左警务大数据云平台"
+      :border='false'
+      left-arrow
+      @click-left="offFn({ path: '/login'})"
+    />
+
     <img
       class="logo"
       src="../assets/logo.png"
@@ -168,22 +166,6 @@ export default {
     margin: 20px auto;
     display: block;
     width: 25%;
-  }
-  .title {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    .back {
-      position: absolute;
-      top: 0;
-      left: 14px;
-      img {
-        height: 16px;
-      }
-    }
   }
   .sou {
     background-color: #fff;

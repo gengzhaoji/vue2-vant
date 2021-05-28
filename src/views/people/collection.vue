@@ -1,15 +1,12 @@
 <template>
   <div class="collection">
     <login :show="islogin"></login>
-    <div class="title">人员采集
-      <div class="back">
-        <img
-          src="../../assets/back.png"
-          @click="offFn()"
-          alt="返回"
-        >
-      </div>
-    </div>
+    <van-nav-bar
+      title="人员采集"
+      :border='false'
+      left-arrow
+      @click-left="offFn()"
+    />
     <div class="content">
       <div>
         <p class="name">姓名</p>
@@ -210,23 +207,6 @@ export default {
   height: 100%;
   overflow: auto;
   background-color: rgb(248, 248, 248);
-  .title {
-    position: relative;
-    background-color: #1583eb;
-    color: #fff;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    .back {
-      position: absolute;
-      top: 0;
-      left: 14px;
-      img {
-        height: 16px;
-      }
-    }
-  }
   .content {
     padding: 5px 15px 0 15px;
     .name {

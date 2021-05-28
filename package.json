@@ -6,7 +6,6 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "dev": "npm run start",
-    "fix": "node build/fix.js",
     "start": "npm run serve -- --open",
     "dev:feng": "vue-cli-service serve --mode feng --open",
     "dev:jia": "vue-cli-service serve --mode jia --open"
@@ -16,13 +15,12 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^2.6.5",
     "fastclick": "^1.0.6",
-    "gz-vue-router": "^1.1.2",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.15",
     "nprogress": "^0.2.0",
     "vant": "^2.5.3",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
+    "vue-router": "3.0.3",
     "vue-scroller": "^2.2.4",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^4.0.0-beta.3"

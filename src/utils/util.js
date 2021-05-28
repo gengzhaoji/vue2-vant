@@ -26,22 +26,22 @@ export function isEqual(object, other) {
 export function debounce(fn, delay = 20, isImmediate = false, context = this) {
   // 使用闭包，保存执行状态，控制函数调用顺序
   let timer;
-  
+
   return function () {
     const _args = [].slice.call(arguments)
-    
+
     clearTimeout(timer);
-    
+
     const _fn = function () {
       timer = null;
       if (!isImmediate) fn.apply(context, _args);
     };
-    
+
     // 是否滚动时立刻执行
     const callNow = !timer && isImmediate;
-    
+
     timer = setTimeout(_fn, delay);
-    
+
     if (callNow) fn.apply(context, _args);
   }
 }
@@ -78,15 +78,15 @@ export function throttle(fn, context = this, isImmediate = false) {
   let isLocked;
   return function () {
     const _args = arguments
-    
+
     if (isLocked) return
-    
+
     isLocked = true
     raFrame(function () {
       isLocked = false;
       fn.apply(context, _args)
     })
-    
+
     isImmediate && fn.apply(context, _args)
   }
 }
@@ -127,7 +127,6 @@ export function traverse(data = [], isFindOne, fn, field = 'children') {
  */
 export function findPath(data, fn, field = 'children') {
   let path = []
-  
   function find(array, parent) {
     parent && path.push(parent)
     for (let i = 0, len = array.length; i < len; i++) {
@@ -149,10 +148,9 @@ export function findPath(data, fn, field = 'children') {
       }
     }
   }
-  
   find([].concat(data))
   return path
-  
+
 }
 
 /**

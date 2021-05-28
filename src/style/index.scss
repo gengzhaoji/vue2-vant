@@ -4,3 +4,10 @@
 // ui样式
 @import "~vant/lib/index.css";
 
+.van-nav-bar {
+    background-color: #031194;
+
+    .van-nav-bar__title {
+        color: #fff;
+    }
+}

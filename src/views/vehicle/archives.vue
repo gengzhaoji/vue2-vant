@@ -1,20 +1,12 @@
 <template>
   <div class="archives">
     <div class="head">
-      <img
-        src="../../assets/head_b.jpg"
-        style="width: 100%;position: absolute;"
-        alt=""
-      >
-      <div class="title">车辆档案
-        <div class="back">
-          <img
-            src="../../assets/back.png"
-            alt="返回"
-            @click="offFn()"
-          >
-        </div>
-      </div>
+      <van-nav-bar
+        title="车辆档案"
+        :border='false'
+        left-arrow
+        @click-left="offFn()"
+      />
       <van-row
         type="flex"
         justify="center"
@@ -248,23 +240,8 @@ export default {
   background-color: rgb(248, 248, 248);
   .head {
     position: relative;
-    .title {
-      margin-bottom: 10px;
-      position: relative;
-      color: #fff;
-      text-align: center;
-      height: 40px;
-      line-height: 40px;
-      font-size: 18px;
-      .back {
-        position: absolute;
-        top: 0;
-        left: 14px;
-        img {
-          height: 16px;
-        }
-      }
-    }
+    background-color: #031194;
+    padding-bottom: 10px;
     .che_xiang {
       border-radius: 50%;
       background-color: #fff;
