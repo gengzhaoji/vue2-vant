@@ -1,3 +1,5 @@
+const Timestamp = new Date().getTime()
+
 const path = require('path')
 
 // 导入compression-webpack-plugin
@@ -75,7 +77,11 @@ module.exports = {
     c.plugins.delete('prefetch');
   },
   configureWebpack: {
-    name: '富全矿山'
+    name: '富全矿山',
+    output: { // 输出重构  打包编译后的 文件名称
+      filename: `js/[name].[chunkhash].${Timestamp}.js`,
+      chunkFilename: `js/[name].[chunkhash].${Timestamp}.js`
+    }
   },
   // webpack-dev-server 相关配置
   devServer: {
