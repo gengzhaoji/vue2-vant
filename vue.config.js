@@ -79,8 +79,8 @@ module.exports = {
   configureWebpack: {
     name: '富全矿山',
     output: { // 输出重构  打包编译后的 文件名称
-      filename: `js/[name].[chunkhash].${Timestamp}.js`,
-      chunkFilename: `js/[name].[chunkhash].${Timestamp}.js`
+      filename: `js/[name].[hash].${Timestamp}.js`,
+      chunkFilename: `js/[name].[hash].${Timestamp}.js`
     }
   },
   // webpack-dev-server 相关配置
