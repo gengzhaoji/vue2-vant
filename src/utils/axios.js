@@ -86,11 +86,11 @@ service.interceptors.request.use(config => {
  */
   config.cancelToken = new axios.CancelToken(cancel => {
     // 判断是否重复切不在白名单中
-    const repeat = axiosPromiseArr.some(item => item.url === config.url);
+    const repeat = axiosPromiseArr.some(item => item.url === config.url && item.method === config.method);
     if (repeat && !whiteList.includes(config.url)) {
       cancel();
     } else {
-      axiosPromiseArr.push({ url: config.url, cancel })
+      axiosPromiseArr.push({ url: config.url, method: config.method, cancel })
     }
   })
 
@@ -104,7 +104,7 @@ service.interceptors.request.use(config => {
 service.interceptors.response.use(res => {
   // 请求成功后从正在进行的请求数组中删除
   axiosPromiseArr.forEach((item, index) => {
-    if (item.url === res.config.url.replace(res.config.baseURL, '')) {
+    if (item.url === res.config.url.replace(res.config.baseURL, '') && item.method === res.config.method) {
       delete axiosPromiseArr[index];
     }
   })
