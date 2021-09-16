@@ -41,12 +41,8 @@ module.exports = {
     modules: false
   },
   chainWebpack: c => {
-    //最小化代码
-    c.optimization.minimize(true);
-    //分割代码
-    c.optimization.splitChunks({
-      chunks: 'all'
-    });
+    // 开启js、css压缩
+    if (isProduction) {
     // 压缩图片
     c.module.rule('images')
       .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
@@ -55,8 +51,6 @@ module.exports = {
       .options({
         bypassOnDebug: true
       });
-    // 开启js、css压缩
-    if (isProduction) {
       c.plugin('compressionPlugin')
         .use(new CompressionPlugin({
           filename: '[path].gz[query]',
@@ -73,8 +67,6 @@ module.exports = {
       .set('@api', resolve('src/api'))
       .set('@com', resolve('src/components'))
       .set('@utils', resolve('src/utils'));
-    c.plugins.delete('preload');
-    c.plugins.delete('prefetch');
   },
   configureWebpack: {
     name: '富全矿山',
